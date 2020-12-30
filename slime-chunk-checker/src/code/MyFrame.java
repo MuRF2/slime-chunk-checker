@@ -49,7 +49,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		this.setResizable(false); //prevent frame from being resized 
 		//this.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
 		this.setSize(425, 255);
-		ImageIcon icon = new ImageIcon("images/icon.png"); //create an ImageIcon
+		ImageIcon icon = new ImageIcon("res/images/icon.png"); //create an ImageIcon
 		this.setIconImage(icon.getImage()); // change icon of frame 
 		this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
 		this.setLayout(null);
@@ -64,7 +64,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		bottom.setBounds(0, 170, 420, 50);
 		
 		intro = new JLabel();
-		ImageIcon image = new ImageIcon("images/Tropical_Slime.gif");
+		ImageIcon image = new ImageIcon("res/images/Tropical_Slime.gif");
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br> This tool can be used with the seed and <br> chunk coordinates to check if the specified <br> chunk can spawn slimes. </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
