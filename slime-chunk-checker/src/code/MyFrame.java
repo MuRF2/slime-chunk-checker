@@ -1,20 +1,10 @@
 package code;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 
 /**
@@ -28,6 +18,9 @@ public class MyFrame extends JFrame implements ActionListener {
 	 * 
 	 */
 	private static final long serialVersionUID = -750988579919629416L;
+	
+	ImageIcon icon;
+	ImageIcon image;
 	JPanel top;
 	JPanel bottom;
 	JLabel intro;
@@ -49,7 +42,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		this.setResizable(false); //prevent frame from being resized 
 		//this.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
 		this.setSize(425, 255);
-		ImageIcon icon = new ImageIcon("res/images/icon.png"); //create an ImageIcon
+		icon = new ImageIcon(this.getClass().getResource("/images/icon.png")); //create an ImageIcon
 		this.setIconImage(icon.getImage()); // change icon of frame 
 		this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
 		this.setLayout(null);
@@ -64,7 +57,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		bottom.setBounds(0, 170, 420, 50);
 		
 		intro = new JLabel();
-		ImageIcon image = new ImageIcon("res/images/Tropical_Slime.gif");
+		image = new ImageIcon(this.getClass().getResource("/images/Tropical_Slime.gif"));
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br> This tool can be used with the seed and <br> chunk coordinates to check if the specified <br> chunk can spawn slimes. </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
@@ -159,13 +152,8 @@ public class MyFrame extends JFrame implements ActionListener {
 			}
 		
 		}		
-	}
-
-	
-
-
-	
-	
-	
+	}	
 }
+	
+
 
