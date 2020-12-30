@@ -3,6 +3,8 @@ package code;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
@@ -29,6 +31,10 @@ public class MyFrame extends JFrame implements ActionListener {
 	JTextField zChunkCo;
 	JButton submitButton;
 	checkSlimechunk chunk = new checkSlimechunk();
+	
+	private boolean seedFieldStart=true;
+	private boolean xChunkCoStart=true;
+	private boolean zChunkCoStart=true;
 	
 	javax.swing.border.Border border = BorderFactory.createLineBorder(Color.green,3);
 	
@@ -82,6 +88,15 @@ public class MyFrame extends JFrame implements ActionListener {
 		seedField.setBackground(Color.white);
 		seedField.setCaretColor(Color.black);
 		seedField.setText("Enter Seed");
+		seedField.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		    	if(seedFieldStart==true) {
+		    		seedField.setText("");
+		    		setseedFieldStart(false);
+		    	}
+		    }
+		});
 		
 		xChunkCo = new JTextField();
 		xChunkCo.setPreferredSize(new Dimension(50,40));
@@ -91,6 +106,15 @@ public class MyFrame extends JFrame implements ActionListener {
 		xChunkCo.setBackground(Color.white);
 		xChunkCo.setCaretColor(Color.black);
 		xChunkCo.setText("X");
+		xChunkCo.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		    	if(xChunkCoStart==true) {
+		    		xChunkCo.setText("");
+		    		setxChunkCoStart(false);
+		    	}
+		    }
+		});
 		
 		zChunkCo = new JTextField();
 		zChunkCo.setPreferredSize(new Dimension(50,40));
@@ -100,6 +124,15 @@ public class MyFrame extends JFrame implements ActionListener {
 		zChunkCo.setBackground(Color.white);
 		zChunkCo.setCaretColor(Color.black);
 		zChunkCo.setText("Z");
+		zChunkCo.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		    	if(zChunkCoStart==true) {
+		    		zChunkCo.setText("");
+		    		setzChunkCoStart(false);
+		    	}
+		    }
+		});
 		
 		submitButton = new JButton("Submit");
 		submitButton.addActionListener(this);
@@ -155,6 +188,19 @@ public class MyFrame extends JFrame implements ActionListener {
 		
 		}		
 	}	
+	
+	public void setxChunkCoStart(boolean status) {
+		this.xChunkCoStart = status;
+	}
+	
+	public void setzChunkCoStart(boolean status) {
+		this.zChunkCoStart = status;
+	}
+	
+	public void setseedFieldStart(boolean status) {
+		this.seedFieldStart = status;
+	}
+	
 }
 	
 
