@@ -1,0 +1,1 @@
+# Slime Chunk Checker for Mincraft 1.16+
