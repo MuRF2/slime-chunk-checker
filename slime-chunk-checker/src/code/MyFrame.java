@@ -45,7 +45,8 @@ public class MyFrame extends JFrame implements ActionListener {
 		this.setSize(430, 260);
 		icon = new ImageIcon(this.getClass().getResource("/images/icon.png")); //create an ImageIcon
 		this.setIconImage(icon.getImage()); // change icon of frame 
-		this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
+		this.setBackground(new Color(220,220,220));
+		//this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
 		this.setLayout(null);
 		
 		top = new JPanel();
