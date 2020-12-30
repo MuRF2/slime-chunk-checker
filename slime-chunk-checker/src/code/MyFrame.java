@@ -58,7 +58,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		
 		intro = new JLabel();
 		image = new ImageIcon(this.getClass().getResource("/images/Tropical_Slime.gif"));
-		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br> This tool can be used with the seed and <br> chunk coordinates to check if the specified <br> chunk can spawn slimes. </body></html>"); //set text of Label
+		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br>This tool checks if the specified chunk can<br> spawn slimes using the world seed and the<br> specific chunk coordinates.  </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
 		intro.setVerticalTextPosition(JLabel.CENTER); //set text TOP, CENTER, BOTTOM of imageicon
