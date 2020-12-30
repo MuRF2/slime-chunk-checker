@@ -41,7 +41,8 @@ public class MyFrame extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of frame 
 		this.setResizable(false); //prevent frame from being resized 
 		//this.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
-		this.setSize(425, 255);
+		//this.setSize(425, 255);
+		this.setSize(430, 260);
 		icon = new ImageIcon(this.getClass().getResource("/images/icon.png")); //create an ImageIcon
 		this.setIconImage(icon.getImage()); // change icon of frame 
 		this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
