@@ -3,10 +3,16 @@ package code;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.*;
+
+
 
 
 /**
@@ -88,7 +94,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		seedField.setBackground(Color.white);
 		seedField.setCaretColor(Color.black);
 		seedField.setText("Enter Seed");
-		seedField.addMouseListener(new MouseAdapter() {
+		/*seedField.addMouseListener(new MouseAdapter() {
 		    @Override
 		    public void mouseClicked(MouseEvent e) {
 		    	if(seedFieldStart==true) {
@@ -96,7 +102,23 @@ public class MyFrame extends JFrame implements ActionListener {
 		    		setseedFieldStart(false);
 		    	}
 		    }
-		});
+		});*/
+		
+		seedField.addFocusListener(new FocusListener() {
+	        @Override
+	        public void focusGained(FocusEvent e) {                
+	        	if(seedFieldStart==true) {
+		    		seedField.setText("");
+		    		setseedFieldStart(false);
+		    	}
+	        }
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});    
 		
 		xChunkCo = new JTextField();
 		xChunkCo.setPreferredSize(new Dimension(50,40));
@@ -106,7 +128,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		xChunkCo.setBackground(Color.white);
 		xChunkCo.setCaretColor(Color.black);
 		xChunkCo.setText("X");
-		xChunkCo.addMouseListener(new MouseAdapter() {
+		/*xChunkCo.addMouseListener(new MouseAdapter() {
 		    @Override
 		    public void mouseClicked(MouseEvent e) {
 		    	if(xChunkCoStart==true) {
@@ -114,8 +136,24 @@ public class MyFrame extends JFrame implements ActionListener {
 		    		setxChunkCoStart(false);
 		    	}
 		    }
-		});
+		});*/
 		
+		xChunkCo.addFocusListener(new FocusListener() {
+	        @Override
+	        public void focusGained(FocusEvent e) {                
+	        	if(xChunkCoStart==true) {
+		    		xChunkCo.setText("");
+		    		setxChunkCoStart(false);
+		    	}
+	        }
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});    
+	    
 		zChunkCo = new JTextField();
 		zChunkCo.setPreferredSize(new Dimension(50,40));
 		zChunkCo.setFont(new Font("Arial", Font.BOLD, 15));
@@ -124,7 +162,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		zChunkCo.setBackground(Color.white);
 		zChunkCo.setCaretColor(Color.black);
 		zChunkCo.setText("Z");
-		zChunkCo.addMouseListener(new MouseAdapter() {
+		/*zChunkCo.addMouseListener(new MouseAdapter() {
 		    @Override
 		    public void mouseClicked(MouseEvent e) {
 		    	if(zChunkCoStart==true) {
@@ -132,7 +170,22 @@ public class MyFrame extends JFrame implements ActionListener {
 		    		setzChunkCoStart(false);
 		    	}
 		    }
-		});
+		});*/
+		
+		zChunkCo.addFocusListener(new FocusListener() {
+	        @Override
+	        public void focusGained(FocusEvent e) {                
+	        	if(zChunkCoStart==true) {
+		    		zChunkCo.setText("");
+		    		setzChunkCoStart(false);
+		    	}
+	        }
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
+			}
+		});    
 		
 		submitButton = new JButton("Submit");
 		submitButton.addActionListener(this);
@@ -153,6 +206,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		this.add(bottom);
 		
 		this.setVisible(true); //make frame visible
+		this.requestFocusInWindow(); //focus on window
 	}
 
 	@Override
