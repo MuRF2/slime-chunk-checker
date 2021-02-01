@@ -73,7 +73,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		bottom.setBounds(34, 181, 420, 50);
 		
 		intro = new JLabel();
-		image = new ImageIcon(this.getClass().getResource("/images/Tropical_slime.gif"));
+		image = new ImageIcon(this.getClass().getResource("/images/slime.gif"));
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br>This tool checks if the specified chunk can<br> spawn slimes using the world seed and the<br> specific chunk coordinates.  </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
