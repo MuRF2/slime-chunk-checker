@@ -207,18 +207,21 @@ public class StartFrame extends JFrame implements ActionListener {
 				chunk.setSeed(Long.parseLong(seedField.getText()));
 			} catch(Exception nolong) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid seed!", "Invalid Input", JOptionPane.ERROR_MESSAGE);	
+				seedField.requestFocusInWindow();
 				return;
 			}
 			try {
 				chunk.setxPosition(Integer.parseInt(xChunkCo.getText()));
 			} catch(Exception noint) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid X-Chunk-Coordinate!", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+				xChunkCo.requestFocusInWindow();
 				return;
 			}
 			try {
 				chunk.setzPosition(Integer.parseInt(zChunkCo.getText()));
 			} catch(Exception noint) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid Z-Chunk-Coordinate!", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+				zChunkCo.requestFocusInWindow();
 				return;
 			}
 			
@@ -237,7 +240,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		 */
 		if(e.getSource()==mapButton) {
 			MapFrame newFrame = new MapFrame();
-			newFrame.setseedFieldText(seedField.getText());
+			newFrame.setSeedFieldText(seedField.getText());
 		}
 	}	
 	

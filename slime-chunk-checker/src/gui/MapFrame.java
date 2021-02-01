@@ -20,7 +20,10 @@ public class MapFrame extends JFrame implements ActionListener{
 	JPanel top;
 	JPanel bottom;
 	JTextField seedField;
+	JTextField xChunkCo;
+	JTextField zChunkCo;
 	JButton refreshButton;
+	
 	
 	MapFrame(){
 		showWindow();
@@ -53,12 +56,32 @@ public class MapFrame extends JFrame implements ActionListener{
 		seedField.setCaretColor(Color.black);
 		seedField.setText("Enter Seed");
 		
+		xChunkCo = new JTextField();
+		xChunkCo.setPreferredSize(new Dimension(50,40));
+		xChunkCo.setFont(new Font("Arial", Font.BOLD, 15));
+		xChunkCo.setHorizontalAlignment(JTextField.CENTER);
+		xChunkCo.setForeground(Color.black);
+		xChunkCo.setBackground(Color.white);
+		xChunkCo.setCaretColor(Color.black);
+		xChunkCo.setText("X");
+		
+		zChunkCo = new JTextField();
+		zChunkCo.setPreferredSize(new Dimension(50,40));
+		zChunkCo.setFont(new Font("Arial", Font.BOLD, 15));
+		zChunkCo.setHorizontalAlignment(JTextField.CENTER);
+		zChunkCo.setForeground(Color.black);
+		zChunkCo.setBackground(Color.white);
+		zChunkCo.setCaretColor(Color.black);
+		zChunkCo.setText("Z");
+		
 		refreshButton = new JButton("Refresh");
 		refreshButton.addActionListener(this);
 		refreshButton.setFocusable(false);
 		refreshButton.setFont(new Font("Arial", Font.BOLD, 15));
 		
 		bottom.add(seedField);
+		bottom.add(xChunkCo);
+		bottom.add(zChunkCo);
 		bottom.add(refreshButton);
 		
 		frame.getContentPane().add(top);
@@ -68,7 +91,7 @@ public class MapFrame extends JFrame implements ActionListener{
 		frame.setVisible(true); //make frame visible
 	}
 	
-	public void setseedFieldText(String toSet)
+	public void setSeedFieldText(String toSet)
 	{
 		this.seedField.setText(toSet);
 	}
