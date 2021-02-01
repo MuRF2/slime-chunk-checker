@@ -73,7 +73,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		bottom.setBounds(34, 181, 420, 50);
 		
 		intro = new JLabel();
-		image = new ImageIcon(this.getClass().getResource("/images/slime.gif"));
+		image = new ImageIcon(this.getClass().getResource("/images/Tropical_Slime.gif"));
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br>This tool checks if the specified chunk can<br> spawn slimes using the world seed and the<br> specific chunk coordinates.  </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
@@ -202,18 +202,21 @@ public class StartFrame extends JFrame implements ActionListener {
 				chunk.setSeed(Long.parseLong(seedField.getText()));
 			} catch(Exception nolong) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid seed!", "Invalid Input", JOptionPane.ERROR_MESSAGE);	
+				seedField.requestFocusInWindow();
 				return;
 			}
 			try {
 				chunk.setxPosition(Integer.parseInt(xChunkCo.getText()));
 			} catch(Exception noint) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid X-Chunk-Coordinate!", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+				xChunkCo.requestFocusInWindow();
 				return;
 			}
 			try {
 				chunk.setzPosition(Integer.parseInt(zChunkCo.getText()));
 			} catch(Exception noint) {
 				JOptionPane.showMessageDialog(null, "Please enter a valid Z-Chunk-Coordinate!", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+				zChunkCo.requestFocusInWindow();
 				return;
 			}
 			
