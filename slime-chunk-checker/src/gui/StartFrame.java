@@ -8,9 +8,7 @@ import java.awt.event.FocusListener;
 
 import javax.swing.*;
 
-import chunk.checkSlimechunk;
-
-
+import chunk.SlimeChunk;
 
 
 /**
@@ -18,13 +16,14 @@ import chunk.checkSlimechunk;
  * @author MuRF2
  *
  */
-public class MyFrame extends JFrame implements ActionListener {
+public class StartFrame extends JFrame implements ActionListener {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -750988579919629416L;
 	
+	JFrame frame = new JFrame();
 	ImageIcon icon;
 	ImageIcon image;
 	JPanel top;
@@ -34,7 +33,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	JTextField xChunkCo;
 	JTextField zChunkCo;
 	JButton submitButton;
-	checkSlimechunk chunk = new checkSlimechunk();
+	JButton mapButton;
+	SlimeChunk chunk = new SlimeChunk();
 	
 	private boolean seedFieldStart=true;
 	private boolean xChunkCoStart=true;
@@ -45,28 +45,34 @@ public class MyFrame extends JFrame implements ActionListener {
 	/**
 	 * Constructor 
 	 */
-	public MyFrame(){
-		
-		this.setTitle("Slime Chunk Checker 1.16+"); //sets title of the frame
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of frame 
-		this.setResizable(false); //prevent frame from being resized 
-		//this.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
-		//this.setSize(425, 255);
-		this.setSize(430, 260);
+	public StartFrame(){
+		showWindow();
+	}
+	
+	public void showWindow() {
+		frame.setTitle("Slime Chunk Checker 1.16+"); //sets title of the frame
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of frame 
+		frame.setResizable(false); //prevent frame from being resized 
+		//frame.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
+		//frame.setSize(425, 255);
+		//frame.setSize(430, 260);
+		frame.setSize(500, 260);
 		icon = new ImageIcon(this.getClass().getResource("/images/icon.png")); //create an ImageIcon
-		this.setIconImage(icon.getImage()); // change icon of frame 
-		this.setBackground(new Color(220,220,220));
+		frame.setIconImage(icon.getImage()); // change icon of frame 
+		frame.setBackground(new Color(220,220,220));
 		//this.getContentPane().setBackground(new Color(220,220,220)); // change color of background 
-		this.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		
 		top = new JPanel();
 		//top.setBackground(Color.red);
-		top.setBounds(0, 0, 420, 170);
+		//top.setBounds(0, 0, 420, 170);
+		top.setBounds(34, 0, 420, 170);
 		
 		bottom = new JPanel();
 		bottom.setLayout(new FlowLayout());
 		//bottom.setBackground(Color.green);
-		bottom.setBounds(0, 170, 420, 50);
+		//bottom.setBounds(0, 170, 420, 50);
+		bottom.setBounds(0, 170, 494, 50);
 		
 		intro = new JLabel();
 		image = new ImageIcon(this.getClass().getResource("/images/Tropical_slime.gif"));
@@ -173,22 +179,31 @@ public class MyFrame extends JFrame implements ActionListener {
 		//submitButton.setBackground(Color.white);
 		//submitButton.setBorder(BorderFactory.createLineBorder(Color.green));
 		
+		mapButton = new JButton("Map");
+		mapButton.addActionListener(this);
+		mapButton.setFocusable(false);
+		mapButton.setFont(new Font("Arial", Font.BOLD, 15));
+		
 		top.add(intro);
 		
 		bottom.add(seedField);
 		bottom.add(xChunkCo);
 		bottom.add(zChunkCo);
 		bottom.add(submitButton);
+		bottom.add(mapButton);
 		
-		this.add(top);
-		this.add(bottom);
+		frame.getContentPane().add(top);
+		frame.getContentPane().add(bottom);
 		
-		this.setVisible(true); //make frame visible
-		this.requestFocusInWindow(); //focus on window
+		frame.setVisible(true); //make frame visible
+		frame.requestFocusInWindow(); //focus on window
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		/**
+		 * if Submit button is pressed 
+		 */
 		if(e.getSource()==submitButton) {
 			
 			try {
@@ -218,7 +233,14 @@ public class MyFrame extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "The specified chunk is not a slime chunk. Slimes won't spawn.", "No Slime Chunk found", JOptionPane.INFORMATION_MESSAGE);
 			}
 		
-		}		
+		}
+		
+		/**
+		 * If Map button is pressed
+		 */
+		if(e.getSource()==mapButton) {
+			MapFrame newFrame = new MapFrame();
+		}
 	}	
 	
 	public void setxChunkCoStart(boolean status) {

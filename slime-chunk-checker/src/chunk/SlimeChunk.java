@@ -6,7 +6,7 @@ import java.util.Random;
  * https://minecraft.gamepedia.com/Slime
  *
  */
-public class checkSlimechunk {
+public class SlimeChunk {
 	
 	private boolean debugBoolean;
 	
@@ -14,8 +14,14 @@ public class checkSlimechunk {
 	private int xPosition;
 	private int zPosition;
 	
-	public checkSlimechunk() {
+	public SlimeChunk() {
 		this.setDebugBoolean(false);
+	}
+	
+	public SlimeChunk(long seed, int x, int z)
+	{
+		this.setDebugBoolean(false);
+		this.checkChunk();
 	}
 		
 	public void checkChunk() {
