@@ -33,7 +33,6 @@ public class StartFrame extends JFrame implements ActionListener {
 	JTextField xChunkCo;
 	JTextField zChunkCo;
 	JButton submitButton;
-	JButton mapButton;
 	SlimeChunk chunk = new SlimeChunk();
 	
 	private boolean seedFieldStart=true;
@@ -56,7 +55,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		//frame.setSize(420, 420); //sets the x-dimension and y-dimension of frame 
 		//frame.setSize(425, 255);
 		//frame.setSize(430, 260);
-		frame.setSize(500, 260);
+		frame.setSize(500, 265);
 		icon = new ImageIcon(this.getClass().getResource("/images/icon.png")); //create an ImageIcon
 		frame.setIconImage(icon.getImage()); // change icon of frame 
 		frame.setBackground(new Color(220,220,220));
@@ -66,13 +65,13 @@ public class StartFrame extends JFrame implements ActionListener {
 		top = new JPanel();
 		//top.setBackground(Color.red);
 		//top.setBounds(0, 0, 420, 170);
-		top.setBounds(34, 0, 420, 170);
+		top.setBounds(34, 11, 420, 170);
 		
 		bottom = new JPanel();
 		bottom.setLayout(new FlowLayout());
 		//bottom.setBackground(Color.green);
 		//bottom.setBounds(0, 170, 420, 50);
-		bottom.setBounds(0, 170, 494, 50);
+		bottom.setBounds(34, 181, 420, 50);
 		
 		intro = new JLabel();
 		image = new ImageIcon(this.getClass().getResource("/images/Tropical_slime.gif"));
@@ -179,18 +178,12 @@ public class StartFrame extends JFrame implements ActionListener {
 		//submitButton.setBackground(Color.white);
 		//submitButton.setBorder(BorderFactory.createLineBorder(Color.green));
 		
-		mapButton = new JButton("Map");
-		mapButton.addActionListener(this);
-		mapButton.setFocusable(false);
-		mapButton.setFont(new Font("Arial", Font.BOLD, 15));
-		
 		top.add(intro);
 		
 		bottom.add(seedField);
 		bottom.add(xChunkCo);
 		bottom.add(zChunkCo);
 		bottom.add(submitButton);
-		bottom.add(mapButton);
 		
 		frame.getContentPane().add(top);
 		frame.getContentPane().add(bottom);
@@ -234,14 +227,7 @@ public class StartFrame extends JFrame implements ActionListener {
 			}
 		
 		}
-		
-		/**
-		 * If Map button is pressed
-		 */
-		if(e.getSource()==mapButton) {
-			MapFrame newFrame = new MapFrame();
-		}
-	}	
+	}
 	
 	public void setxChunkCoStart(boolean status) {
 		this.xChunkCoStart = status;
