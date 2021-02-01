@@ -10,7 +10,6 @@ import javax.swing.*;
 
 import chunk.SlimeChunk;
 
-
 /**
  * 
  * @author MuRF2
