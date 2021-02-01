@@ -5,10 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.*;
 
@@ -94,16 +90,10 @@ public class MyFrame extends JFrame implements ActionListener {
 		seedField.setBackground(Color.white);
 		seedField.setCaretColor(Color.black);
 		seedField.setText("Enter Seed");
-		/*seedField.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseClicked(MouseEvent e) {
-		    	if(seedFieldStart==true) {
-		    		seedField.setText("");
-		    		setseedFieldStart(false);
-		    	}
-		    }
-		});*/
 		
+		/**
+		 * FocusListener to remove the placeholder text with mouse or tab
+		 */
 		seedField.addFocusListener(new FocusListener() {
 	        @Override
 	        public void focusGained(FocusEvent e) {                
@@ -116,7 +106,6 @@ public class MyFrame extends JFrame implements ActionListener {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 		});    
 		
@@ -128,16 +117,10 @@ public class MyFrame extends JFrame implements ActionListener {
 		xChunkCo.setBackground(Color.white);
 		xChunkCo.setCaretColor(Color.black);
 		xChunkCo.setText("X");
-		/*xChunkCo.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseClicked(MouseEvent e) {
-		    	if(xChunkCoStart==true) {
-		    		xChunkCo.setText("");
-		    		setxChunkCoStart(false);
-		    	}
-		    }
-		});*/
 		
+		/**
+		 * FocusListener to remove the placeholder text with mouse or tab
+		 */
 		xChunkCo.addFocusListener(new FocusListener() {
 	        @Override
 	        public void focusGained(FocusEvent e) {                
@@ -150,7 +133,6 @@ public class MyFrame extends JFrame implements ActionListener {
 			@Override
 			public void focusLost(FocusEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 		});    
 	    
@@ -162,16 +144,10 @@ public class MyFrame extends JFrame implements ActionListener {
 		zChunkCo.setBackground(Color.white);
 		zChunkCo.setCaretColor(Color.black);
 		zChunkCo.setText("Z");
-		/*zChunkCo.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseClicked(MouseEvent e) {
-		    	if(zChunkCoStart==true) {
-		    		zChunkCo.setText("");
-		    		setzChunkCoStart(false);
-		    	}
-		    }
-		});*/
 		
+		/**
+		 * FocusListener to remove the placeholder text with mouse or tab
+		 */
 		zChunkCo.addFocusListener(new FocusListener() {
 	        @Override
 	        public void focusGained(FocusEvent e) {                
