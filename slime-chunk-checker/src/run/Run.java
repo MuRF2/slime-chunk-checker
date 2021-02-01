@@ -1,4 +1,6 @@
-package code;
+package run;
+
+import gui.MyFrame;
 
 public class Run {
 

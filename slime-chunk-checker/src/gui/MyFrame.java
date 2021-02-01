@@ -1,4 +1,4 @@
-package code;
+package gui;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +7,8 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 import javax.swing.*;
+
+import chunk.checkSlimechunk;
 
 
 
@@ -43,7 +45,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	/**
 	 * Constructor 
 	 */
-	MyFrame(){
+	public MyFrame(){
 		
 		this.setTitle("Slime Chunk Checker 1.16+"); //sets title of the frame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of frame 
@@ -67,7 +69,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		bottom.setBounds(0, 170, 420, 50);
 		
 		intro = new JLabel();
-		image = new ImageIcon(this.getClass().getResource("/images/Tropical_Slime.gif"));
+		image = new ImageIcon(this.getClass().getResource("/images/Tropical_slime.gif"));
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br>This tool checks if the specified chunk can<br> spawn slimes using the world seed and the<br> specific chunk coordinates.  </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
