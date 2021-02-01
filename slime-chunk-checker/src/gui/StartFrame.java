@@ -75,7 +75,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		bottom.setBounds(0, 170, 494, 50);
 		
 		intro = new JLabel();
-		image = new ImageIcon(this.getClass().getResource("/images/Tropical_slime.gif"));
+		image = new ImageIcon(this.getClass().getResource("/images/Tropical_Slime.gif"));
 		intro.setText("<html><body> In Java Edition, \"slime chunks\" are determined <br>pseudo-randomly by combining their chunk <br> coordinates with the seed of the world.<br>This tool checks if the specified chunk can<br> spawn slimes using the world seed and the<br> specific chunk coordinates.  </body></html>"); //set text of Label
 		intro.setIcon(image);
 		intro.setHorizontalTextPosition(JLabel.RIGHT); //set text LEFT, CENTER; RIGHT of imageicon
@@ -175,9 +175,6 @@ public class StartFrame extends JFrame implements ActionListener {
 		submitButton.addActionListener(this);
 		submitButton.setFocusable(false);
 		submitButton.setFont(new Font("Arial", Font.BOLD, 15));
-		//submitButton.setForeground(Color.black);
-		//submitButton.setBackground(Color.white);
-		//submitButton.setBorder(BorderFactory.createLineBorder(Color.green));
 		
 		mapButton = new JButton("Map");
 		mapButton.addActionListener(this);
@@ -240,6 +237,7 @@ public class StartFrame extends JFrame implements ActionListener {
 		 */
 		if(e.getSource()==mapButton) {
 			MapFrame newFrame = new MapFrame();
+			newFrame.setseedFieldText(seedField.getText());
 		}
 	}	
 	
